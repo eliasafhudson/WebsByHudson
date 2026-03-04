@@ -584,8 +584,11 @@ img {
         align-items: center;
         justify-content: center;
         transition: 0.5s;
+        color: var(--primary-color);
     }
-
+    .nav-links a:hover {
+        border: 2px solid var(--primary-color);
+    }
     .nav-links.active {
         right: 0;
     }
@@ -613,6 +616,7 @@ img {
     .section {
         padding: 60px 0;
     }
+
 }
 .feature-card .icon {
     color: var(--accent-color);
