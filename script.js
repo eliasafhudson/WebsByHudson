@@ -15,16 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        hamburger.querySelector('i').classList.toggle('fa-bars');
-        hamburger.querySelector('i').classList.toggle('fa-times');
+        const icon = hamburger.querySelector('i');
+        const isMenu = icon.getAttribute('data-lucide') === 'menu';
+        icon.setAttribute('data-lucide', isMenu ? 'x' : 'menu');
+        lucide.createIcons();
     });
 
     // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            hamburger.querySelector('i').classList.add('fa-bars');
-            hamburger.querySelector('i').classList.remove('fa-times');
+            const icon = hamburger.querySelector('i');
+            icon.setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
         });
     });
 
